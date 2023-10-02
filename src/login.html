@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Event Bookie</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../dist/output.css">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.16/dist/tailwind.min.css">
+</head>
+
+<body class="bg-red-50 m-0">
+    <nav class="flex justify-between items-center bg-orange-400 text-white py-4 px-7 text-lg w-full">
+        <div class="flex items-center space-x-4">
+            <ul>
+                <a href="index.html"><li class="hover:text-orange-600">Event Bookie</li></a>
+            </ul>
+            <ul>
+               <a href=""><li class=" hover:text-orange-600">Sports</li></ul></a>
+            </ul>
+            <ul>
+                <a href=""><li class="hover:text-orange-600">Music</li></a>
+            </ul>
+            <ul>
+                <a href=""><li class="hover:text-orange-600">Shows</li> </a>
+            </ul>
+        </div>
+        <div class="items-center flex space-x-4">
+            <ul>
+                <a href=""><li class="hover:text-orange-600">My Tickets</li> </a>
+            </ul>
+            <ul>
+                <a href=""><li class="bg-red-500 rounded-md p-2 hover:text-purple-600">Login</li> </a>
+            </ul>
+        </div>
+    </nav>
+	
+	
+    <h1 class="text-center py-16 text-4xl text-red-500">Welcome to Event Bookie</h1>
+    
+    <h3 class="text-center py-4 text-xl text-orange-500">Where you can find events you'll love!</h3>
+    
+    <div class="container mx-auto py-8">
+        <div class="border rounded shadow-lg p-4">
+            <!-- Tabs navigation -->
+            <ul class="flex space-x-4">
+                <li>
+                    <a href="#tab-1" class="px-4 py-2 bg-orange-500 text-white rounded-t-lg hover:bg-blue-600">Login</a>
+                </li>
+                <li>
+                    <a href="#tab-2" class="px-4 py-2 bg-orange-500 text-white rounded-t-lg hover:bg-blue-600">Sign up</a>
+                </li>
+            </ul>
+            <!-- Tabs content -->
+            <div id="tab-1" class="py-4">
+                <h2 class="text-2xl font-semibold">Please Login with an Option Below</h2>
+				
+					<button class="w-48 h-12 mb-4 bg-blue-500 text-white font-bold rounded-lg hover:bg-blue-600">Login with Facebook</button>
+				<button class="w-48 h-12 mb-4 bg-red-500 text-white font-bold rounded-lg hover:bg-red-600">Login with Gmail</button>
+				<button class="w-48 h-12 mb-4 bg-gray-800 text-white font-bold rounded-lg hover:bg-gray-900">Login with Other</button>
+					
+            </div>
+            <div id="tab-2" class="py-4 hidden">
+                <h2 class="text-2xl font-semibold">Please Signup with an Option Below</h2>
+                <button class="w-48 h-12 mb-4 bg-blue-500 text-white font-bold rounded-lg hover:bg-blue-600">Signup with Facebook</button>
+				<button class="w-48 h-12 mb-4 bg-red-500 text-white font-bold rounded-lg hover:bg-red-600">Signup with Gmail</button>
+				<button class="w-48 h-12 mb-4 bg-gray-800 text-white font-bold rounded-lg hover:bg-gray-900">Signup with Other</button>
+            </div>
+        </div>
+    </div>
+
+    
+    
+    <footer class="flex justify-center items-center bg-orange-400 text-white py-4 px-7 text-lg w-full pt-14">
+        <div> Copyright © Event Bookie</div>
+    </footer>
+    
+    
+    <script>
+	const tabs = document.querySelectorAll('[href^="#tab-"]');
+        
+        tabs.forEach(tab => {
+            tab.addEventListener('click', (e) => {
+                e.preventDefault();
+                const targetId = tab.getAttribute('href').substring(1);
+                const targetContent = document.getElementById(targetId);
+                
+                // Hide all tab content
+                document.querySelectorAll('[id^="tab-"]').forEach(content => {
+                    content.classList.add('hidden');
+                });
+                
+                // Show the selected tab content
+                targetContent.classList.remove('hidden');
+            });
+        });
+    </script>
+    
+    
+    
+    <script src="../dist/bundle.js"></script>  
+    <script src="" async defer></script>
+</body>
+
+</html>
