@@ -612,6 +612,16 @@ video {
   height: 2rem;
 }
 
+.h-12 {
+  height: 2.5rem;
+}
+.h-16 {
+  height: 4rem;
+}
+.h-24 {
+  height: 6rem;
+}
+
 .h-48 {
   height: 12rem;
 }
@@ -682,6 +692,10 @@ video {
 
 .items-center {
   align-items: center;
+}
+
+.align-middle{
+  vertical-align: center;
 }
 
 .justify-start {
