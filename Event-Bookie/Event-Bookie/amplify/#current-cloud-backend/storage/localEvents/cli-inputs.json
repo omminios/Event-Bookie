@@ -1,0 +1,16 @@
+{
+  "resourceName": "localEvents",
+  "tableName": "localEvents",
+  "partitionKey": {
+    "fieldName": "EventID",
+    "fieldType": "string"
+  },
+  "sortKey": {
+    "fieldName": "EventDate",
+    "fieldType": "string"
+  },
+  "gsi": [],
+  "triggerFunctions": [
+    "localEventsTrigger74820eab"
+  ]
+}

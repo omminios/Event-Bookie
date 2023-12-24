@@ -1,0 +1,19 @@
+{
+  "version": 1,
+  "paths": {
+    "/createEvents": {
+      "name": "/createEvents",
+      "lambdaFunction": "createEvents",
+      "permissions": {
+        "setting": "open"
+      }
+    },
+    "/readEvents": {
+      "name": "/readEvents",
+      "lambdaFunction": "readEvents",
+      "permissions": {
+        "setting": "open"
+      }
+    }
+  }
+}

@@ -1,0 +1,197 @@
+{
+  "providers": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-eventbookie-devv-224109-authRole",
+      "UnauthRoleArn": "arn:aws:iam::752241423954:role/amplify-eventbookie-devv-224109-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::752241423954:role/amplify-eventbookie-devv-224109-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-eventbookie-devv-224109-deployment",
+      "UnauthRoleName": "amplify-eventbookie-devv-224109-unauthRole",
+      "StackName": "amplify-eventbookie-devv-224109",
+      "StackId": "arn:aws:cloudformation:us-east-1:752241423954:stack/amplify-eventbookie-devv-224109/d1f1db70-8368-11ee-940a-0a4ef2593737",
+      "AmplifyAppId": "d2e7akbhf7sax3"
+    }
+  },
+  "api": {
+    "localEventhandler": {
+      "dependsOn": [
+        {
+          "attributes": [
+            "Name",
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "createEvents"
+        },
+        {
+          "attributes": [
+            "Name",
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "readEvents"
+        }
+      ],
+      "providerPlugin": "awscloudformation",
+      "service": "API Gateway",
+      "output": {
+        "ApiName": "localEventhandler",
+        "RootUrl": "https://kv2ch5exkg.execute-api.us-east-1.amazonaws.com/devv",
+        "ApiId": "kv2ch5exkg"
+      },
+      "lastPushTimeStamp": "2023-11-27T22:15:33.776Z",
+      "providerMetadata": {
+        "s3TemplateURL": "https://s3.amazonaws.com/amplify-eventbookie-devv-224109-deployment/amplify-cfn-templates/api/localEventhandler-cloudformation-template.json",
+        "logicalId": "apilocalEventhandler"
+      }
+    }
+  },
+  "auth": {
+    "EventBookie": {
+      "customAuth": false,
+      "dependsOn": [],
+      "frontendAuthConfig": {
+        "mfaConfiguration": "OFF",
+        "mfaTypes": [
+          "SMS"
+        ],
+        "passwordProtectionSettings": {
+          "passwordPolicyMinLength": 8,
+          "passwordPolicyCharacters": [
+            "REQUIRES_LOWERCASE",
+            "REQUIRES_NUMBERS",
+            "REQUIRES_SYMBOLS",
+            "REQUIRES_UPPERCASE"
+          ]
+        },
+        "signupAttributes": [],
+        "socialProviders": [
+          "GOOGLE"
+        ],
+        "usernameAttributes": [
+          "EMAIL"
+        ],
+        "verificationMechanisms": [
+          "EMAIL"
+        ]
+      },
+      "providerPlugin": "awscloudformation",
+      "service": "Cognito",
+      "output": {
+        "CreatedSNSRole": "arn:aws:iam::752241423954:role/sns38ce3690224109-devv",
+        "UserPoolId": "us-east-1_NuYNMzcgt",
+        "AppClientIDWeb": "13itdrca92kp0th6l0b80mog3f",
+        "AppClientID": "1srbtb3eoqlfifs36v1guebtiu",
+        "HostedUIDomain": "3li8i9b3j79o-devv",
+        "IdentityPoolId": "us-east-1:50c3c2d9-b62e-4c11-bfbe-a74ddc1df305",
+        "UserPoolArn": "arn:aws:cognito-idp:us-east-1:752241423954:userpool/us-east-1_NuYNMzcgt",
+        "IdentityPoolName": "testAuthIdentityPool__devv",
+        "OAuthMetadata": "{\"AllowedOAuthFlows\":[\"code\"],\"AllowedOAuthScopes\":[\"phone\",\"email\",\"openid\",\"profile\",\"aws.cognito.signin.user.admin\"],\"CallbackURLs\":[\"http://localhost:5173/LoginPage\"],\"LogoutURLs\":[\"http://localhost:5173/\"]}",
+        "UserPoolName": "EventBookie"
+      },
+      "lastPushTimeStamp": "2023-11-27T22:15:33.783Z",
+      "providerMetadata": {
+        "s3TemplateURL": "https://s3.amazonaws.com/amplify-eventbookie-devv-224109-deployment/amplify-cfn-templates/auth/EventBookie-cloudformation-template.json",
+        "logicalId": "authEventBookie"
+      },
+      "lastPushDirHash": "xK80HqFRzNlizXUqE0c1ap2nNUg="
+    }
+  },
+  "function": {
+    "createEvents": {
+      "build": true,
+      "dependsOn": [
+        {
+          "attributes": [
+            "Name",
+            "Arn",
+            "StreamArn"
+          ],
+          "category": "storage",
+          "resourceName": "localEvents"
+        }
+      ],
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda",
+      "output": {
+        "LambdaExecutionRoleArn": "arn:aws:iam::752241423954:role/eventbookieLambdaRoled7809f72-devv",
+        "Region": "us-east-1",
+        "Arn": "arn:aws:lambda:us-east-1:752241423954:function:createEvents-devv",
+        "Name": "createEvents-devv",
+        "LambdaExecutionRole": "eventbookieLambdaRoled7809f72-devv"
+      },
+      "lastPushTimeStamp": "2023-11-27T22:15:33.790Z",
+      "providerMetadata": {
+        "s3TemplateURL": "https://s3.amazonaws.com/amplify-eventbookie-devv-224109-deployment/amplify-cfn-templates/function/createEvents-cloudformation-template.json",
+        "logicalId": "functioncreateEvents"
+      },
+      "s3Bucket": {
+        "deploymentBucketName": "amplify-eventbookie-devv-224109-deployment",
+        "s3Key": "amplify-builds/createEvents-483446525a70374b5638-build.zip"
+      },
+      "lastBuildTimeStamp": "2023-11-27T02:11:31.619Z",
+      "lastBuildType": "PROD",
+      "lastPackageTimeStamp": "2023-11-27T02:11:33.874Z",
+      "distZipFilename": "createEvents-483446525a70374b5638-build.zip",
+      "lastPushDirHash": "H4FRZp7KV8vHcKXxQ+iA7JRN4IE="
+    },
+    "readEvents": {
+      "build": true,
+      "dependsOn": [
+        {
+          "attributes": [
+            "Name",
+            "Arn",
+            "StreamArn"
+          ],
+          "category": "storage",
+          "resourceName": "localEvents"
+        }
+      ],
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda",
+      "output": {
+        "LambdaExecutionRoleArn": "arn:aws:iam::752241423954:role/eventbookieLambdaRolea2f0192b-devv",
+        "Region": "us-east-1",
+        "Arn": "arn:aws:lambda:us-east-1:752241423954:function:readEvents-devv",
+        "Name": "readEvents-devv",
+        "LambdaExecutionRole": "eventbookieLambdaRolea2f0192b-devv"
+      },
+      "lastPushTimeStamp": "2023-11-27T22:15:34.704Z",
+      "providerMetadata": {
+        "s3TemplateURL": "https://s3.amazonaws.com/amplify-eventbookie-devv-224109-deployment/amplify-cfn-templates/function/readEvents-cloudformation-template.json",
+        "logicalId": "functionreadEvents"
+      },
+      "s3Bucket": {
+        "deploymentBucketName": "amplify-eventbookie-devv-224109-deployment",
+        "s3Key": "amplify-builds/readEvents-592b4c47454f7a707879-build.zip"
+      },
+      "lastBuildTimeStamp": "2023-11-27T22:14:16.078Z",
+      "lastBuildType": "PROD",
+      "lastPackageTimeStamp": "2023-11-27T22:14:18.423Z",
+      "distZipFilename": "readEvents-592b4c47454f7a707879-build.zip",
+      "lastPushDirHash": "Y+LGEOzpxymdIzRKa80f9r2JUz4="
+    }
+  },
+  "storage": {
+    "localEvents": {
+      "providerPlugin": "awscloudformation",
+      "service": "DynamoDB",
+      "output": {
+        "PartitionKeyName": "EventID",
+        "SortKeyName": "EventDate",
+        "SortKeyType": "S",
+        "Region": "us-east-1",
+        "Arn": "arn:aws:dynamodb:us-east-1:752241423954:table/localEvents-devv",
+        "StreamArn": "arn:aws:dynamodb:us-east-1:752241423954:table/localEvents-devv/stream/2023-11-21T13:45:50.344",
+        "PartitionKeyType": "S",
+        "Name": "localEvents-devv"
+      },
+      "lastPushTimeStamp": "2023-11-27T22:15:33.803Z",
+      "providerMetadata": {
+        "s3TemplateURL": "https://s3.amazonaws.com/amplify-eventbookie-devv-224109-deployment/amplify-cfn-templates/storage/localEvents-cloudformation-template.json",
+        "logicalId": "storagelocalEvents"
+      }
+    }
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "tableName": "localEvents",
+  "partitionKeyName": "EventID",
+  "partitionKeyType": "S",
+  "sortKeyName": "EventDate",
+  "sortKeyType": "S"
+}
